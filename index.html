@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn Quy trình Mendan</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #34495e;
+            --success-color: #2ecc71;
+            --text-color: #333;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 30px auto;
+            padding: 0;
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            padding: 30px 20px;
+            color: white;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .content {
+            padding: 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            border: none;
+        }
+        
+        thead {
+            background-color: var(--primary-color);
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+        
+        th {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+        
+        th:first-child, td:first-child {
+            width: 5%;
+            text-align: center;
+        }
+        
+        th:nth-child(2), td:nth-child(2) {
+            width: 25%;
+        }
+        
+        th:nth-child(3), td:nth-child(3) {
+            width: 20%;
+        }
+        
+        th:nth-child(4), td:nth-child(4) {
+            width: 50%;
+        }
+        
+        tbody tr {
+            transition: background-color 0.3s ease;
+        }
+        
+        tbody tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        tbody tr:hover {
+            background-color: #edf2f7;
+        }
+        
+        td ul, td ol {
+            margin: 5px 0 5px 20px;
+        }
+        
+        td li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .stt {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            border-radius: 50%;
+        }
+        
+        .highlight {
+            background-color: rgba(52, 152, 219, 0.1);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        
+        .content-title {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .time-info {
+            font-style: italic;
+            color: var(--accent-color);
+        }
+        
+        .note-content {
+            line-height: 1.7;
+        }
+        
+        .note-content br {
+            margin-bottom: 5px;
+        }
+        
+        .japanese-text {
+            font-size: 0.95em;
+            line-height: 1.8;
+            margin-top: 5px;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            margin-top: 0;
+        }
+        
+        @media (max-width: 992px) {
+            .container {
+                margin: 15px;
+                width: auto;
+            }
+            
+            th, td {
+                padding: 12px 10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            th, td {
+                white-space: normal;
+                font-size: 14px;
+            }
+            
+            .stt {
+                width: 24px;
+                height: 24px;
+                line-height: 24px;
+                font-size: 12px;
+            }
+            
+            h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hướng dẫn Quy trình Mendan</h1>
+            <div class="subtitle">Tài liệu hướng dẫn chi tiết cho việc chuẩn bị và thực hiện các buổi phỏng vấn Mendan</div>
+        </header>
+        
+        <div class="content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>NỘI DUNG</th>
+                        <th>THỜI GIAN</th>
+                        <th>GHI CHÚ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div class="stt">1</div></td>
+                        <td class="content-title">Thu thập thông tin.</td>
+                        <td class="time-info">Khi có mail thông báo về buổi Mendan</td>
+                        <td class="note-content">
+                            Các thông tin cần ghi nhận:<br>
+                            1. Đối tượng tham gia (TTS nào? GV nào? Các BP nào? Khách là ND hay XN?)<br>
+                            2. Mục đích Mendan (Mendan lần đầu, Mendan định kì, Mendan TXC, Mendan check tiếng Nhật...)<br>
+                            3. Hình thức Mendan (Onl hay trực tiếp)<br>
+                            4. Thời gian Mendan (Ngày, giờ cụ thể)<br>
+                            (LINK ZOOM nếu có)<br>
+                            5. Shikai là ai?
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="stt">2</div></td>
+                        <td class="content-title">Xác nhận thông tin các bên.</td>
+                        <td class="time-info">Khi các Shunin sẽ thông báo các thông tin trên group Mendan. Cũng như xác nhận xem lịch các bạn có thể tham gia được hay không với GV. Các GV có nắm thông tin chưa?</td>
+                        <td class="note-content">
+                            1. Double check các thông tin đã chính xác chưa?<br>
+                            2. Các thông tin về người phụ trách chính (GVCN có tham gia không?), mức độ quan trọng (mình có phải host không? có nhờ hỗ trợ set up máy của bộ phận HC không?...) sẽ được chốt ở bước này.<br>
+                            3. Nếu có thắc mắc chưa rõ, xác nhận cùng Quản lý.<br>
+                            4. Thông báo đến TTS những thông tin cần thiết.<br>
+                            5. Tính toán ngày, chốt lịch luyện tập hợp lí cùng với TTS.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="stt">3</div></td>
+                        <td class="content-title">TTS luyện tập Tư thế, Chào hỏi.</td>
+                        <td class="time-info">Theo lịch đã chốt với TTS</td>
+                        <td class="note-content">
+                            Chú ý luyện tập các thao tác đứng ngồi nhanh gọn lẹ, phản hồi khi được gọi tên to rõ... <br>
+                            Chú ý thêm đầu tóc, đồng phục và thẻ tên các bạn đồng nhất
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="stt">4</div></td>
+                        <td class="content-title">TTS luyện tập bài GTBT.</td>
+                        <td class="time-info">Theo lịch đã chốt với TTS</td>
+                        <td class="note-content">
+                            Khách hàng hoặc NV có thể bất chợt mời các bạn đọc GTBT nên phải luyện tập trước mỗi buổi mendan.<br>
+                            Luyện tập phát âm to rõ, dễ nghe, có sử dụng ngôn ngữ cơ thể để diễn đạt thông tin.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="stt">5</div></td>
+                        <td class="content-title">TTS đặt câu hỏi (3-5 câu) và luyện tập cách đặt câu hỏi.</td>
+                        <td class="time-info">Theo lịch đã chốt với TTS</td>
+                        <td class="note-content">
+                            Yêu cầu TTS soạn trước câu hỏi về thời tiết, văn hoá và công việc để hỏi khách. Cho các bạn đặt câu hỏi và luyện tập các tình huống sẽ xảy ra. Hướng dẫn các bạn xử lí (các câu cảm thán, aiduchi…)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="stt">6</div></td>
+                        <td class="content-title">TTS luyện tập phản xạ kaiwa để đối ứng với câu hỏi của khách hoặc luyện tập theo các yêu cầu từ trước của khách (Bài hát, diễn kịch…).</td>
+                        <td class="time-info">Theo lịch đã chốt với TTS</td>
+                        <td class="note-content">
+                            Luyện tập dựa trên List 150 câu hỏi, GV chọn ra các câu hỏi thường bị hỏi nhất để hỏi các bạn. (Có thể tham khảo các bài nhật kí Mendan trên server)<br>
+                            Đối với các trường hợp khách yêu cầu các task hát hoặc diễn kịch thì cũng cho các bạn luyện tập (đơn có nhiều TTS đi)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="stt">7</div></td>
+                        <td class="content-title">GV chuẩn bị các đánh giá liên quan đến TTS để đối ứng khi khách có yêu cầu.</td>
+                        <td class="time-info">Thực hiện càng sớm càng tốt, GV cũng cần sự luyện tập để vào buổi Mendan phản ứng tốt hơn.</td>
+                        <td class="note-content">
+                            Các đánh giá cơ bản: vấn đề -> giải pháp -> kết quả (tình hình thi bằng cấp). Cách học ở trung tâm…<br>
+                            Các vấn đề đã được nhắc nhở ở buổi Mendan trước, GV cũng lưu ý chuẩn bị câu trả lời nếu bị hỏi tới.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="stt">8</div></td>
+                        <td class="content-title">TTS check cùng Trưởng GV.</td>
+                        <td class="time-info">thường là trước Mendan 1 ngày</td>
+                        <td class="note-content">
+                            Xác nhận lịch với Trưởng GV (nếu có)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="stt">9</div></td>
+                        <td class="content-title">Xác nhận phòng sẽ sử dụng.</td>
+                        <td class="time-info">Vào sáng ASAKAI ngày MENDAN, xác nhận phòng sẽ sử dụng để các bên cùng nắm</td>
+                        <td class="note-content">
+                            Tuỳ theo số lượng người tham gia, thời gian diễn ra mà đề xuất phòng phù hợp
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="stt">10</div></td>
+                        <td class="content-title">Set up máy (đối với hình thức onl).</td>
+                        <td class="time-info">GV có mặt trước 45p để set up máy (kể cả GV tantou và GV tham gia)</td>
+                        <td class="note-content">
+                            1. Sử dụng máy tính công ty để set up zoom cơ bản. Hoặc chuẩn bị các cốc chén trà đối với mendan trực tiếp.<br>
+                            2. Check tiếng input và output (có thể đăng nhập vào zoom cá nhân check trước rồi mới đăng nhập vào link zoom chính)<br>
+                            3. Chuẩn bị thêm loa ngoài có sạc pin đầy đủ, phòng trường hợp kết nối loa lỗi.<br>
+                            4. Check hình ảnh khung hình hợp lý, nhìn thấy được toàn cảnh các bạn TTS.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="stt">11</div></td>
+                        <td class="content-title">Chấn chỉnh ngoại hình, lưu ý tác phong TTS.</td>
+                        <td class="time-info">Cho TTS tập hợp trước 45p để chuẩn bị</td>
+                        <td class="note-content">
+                            1. Tóc tai gọn gàng, tươi tắn.<br>
+                            2. Thẻ tên đeo có đồng nhất chưa?<br>
+                            3. Check lại tư thế đứng ngồi -> thao tác nhanh nhẹn<br>
+                            4. Dặn dò lại các thông tin cần thiết<br>
+                            5. Thời gian còn lại cho HV luyện kaiwa và GTBT với nhau
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="stt">12</div></td>
+                        <td class="content-title">Thu âm và ghi chép lại nội dung của buổi Mendan.</td>
+                        <td class="time-info">Sau buổi mendan</td>
+                        <td class="note-content">
+                            Để ý các quạt trần có tiếng lớn không, có ảnh hưởng đến file ghi âm. Ghi âm có đang được liên tục không, nhiều khi bộ nhớ hết, ghi âm đứt giữa chừng.<br>
+                            Các thông tin về người tham dự, cần được ghi nhận chính xác.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="stt">13</div></td>
+                        <td class="content-title">Nagare Shikai</td>
+                        <td class="time-info">Khi bắt đầu, đến khi kết thúc</td>
+                        <td class="note-content japanese-text">
+                            司会の流れ:<br>
+                            1. 開会のあいさつと自己紹介<br>
+                            (おはようございます・こんにちは)<br>
+                            本日はお忙しい中、ご参加いただきありがとうございます。<br>
+                            司会を務めさせていただきます、○○と申します。よろしくお願いいたします。<br>
+                            時間になりますので、面談を始めさせていただきます。<br>
+                            初めにITMセンターの参加者をご紹介させていただきます。<br>
+                            ホーチミンセンターの営業務部: ~さんがいます。<br>
+                            ダナン・ハノインセンターの教育部: ~さんがいます。(ある場合)<br>
+                            (状況に合わせて調整する)<br>
+                            2. 面談の流れの説明<br>
+                            面談の構成: 今回の面談は大きく分けて、自己紹介、日本語能力に関する質問、質疑応答の3つのパートで構成されます。<br>
+                            よろしいでしょうか。<br>
+                            3. 実習生の自己紹介<br>
+                            ・ 実習生への指示: では、○○さんから順に自己紹介をお願いします。<br>
+                            4. 日本語能力に関する質問<br>
+                            ・ 司会のお願い: ○○様には、実習生の日本語能力を客観的に評価していただけるよう、日本語の質問をお願いできますでしょうか。<br>
+                            5. 質疑応答<br>
+                            ・ 司会のお願い: ○○さん、お客様に何か聞きたいことはありますか?<br>
+                            6. 閉会のあいさつ<br>
+                            ・ お客さんの指導に対して: ご指導、ありがとうございます。(今後の実習生の指導に活かしてまいります。日本語学習をさらに強化するよう指導してまいります。)<br>
+                            ・ 面談のまとめ: 本日の面談では、実習生の日本語能力について、様々な角度から評価することができました。ご協力いただいた皆様、本当にありがとうございました。では、本日の面談、これで以上です。今後とも、よろしくお願いいたします。
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="stt">14</div></td>
+                        <td class="content-title">GV chú ý, điều hướng TTS có những đối ứng phù hợp với yêu cầu của khách.</td>
+                        <td class="time-info">linh hoạt theo tình huống</td>
+                        <td class="note-content">
+                            Chú ý nhắc nhở HV cười tươi khi trả lời. Dù ngồi thời gian lâu nhưng vẫn phải đúng tư thế, tươi tắn.<br>
+                            Khi được giải thích thì chủ động nêu cảm xúc, cảm tưởng, cám ơn.<br>
+                            Tránh hỏi 1 câu hỏi nhiều lần, hoặc hỏi lại các việc đã giải thích.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="stt">15</div></td>
+                        <td class="content-title">Thu dọn lại phòng ốc, thiết bị</td>
+                        <td class="time-info">ngay sau buổi mendan</td>
+                        <td class="note-content">
+                            Cất lại các thiết bị điện về chỗ ban đầu, kéo ghế sát bàn, và đừng quên tắt máy lạnh trước khi ra khỏi phòng.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="stt">16</div></td>
+                        <td class="content-title">FB cùng Quản lý hoặc nhận FB từ phòng KD (nếu có)</td>
+                        <td class="time-info">Có thể FB ngay sau mendan hoặc FB sau 1 ngày trên group Mendan. (Quản lý sẽ FB)</td>
+                        <td class="note-content">
+                            Sau khi nhận được FB từ các bên, sẽ có đánh giá hoặc nêu ra những điểm cần cải thiện trong các lần tới
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="stt">17</div></td>
+                        <td class="content-title">FB lại với các bạn TTS</td>
+                        <td class="time-info">Sau buổi mendan</td>
+                        <td class="note-content">
+                            đánh giá tích cực các điểm TTS làm tốt, phân tích điểm cần cải thiện, và theo dõi TTS cho đến các buổi mendan tiếp theo
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="stt">18</div></td>
+                        <td class="content-title">Tạo bản thảo File Nhật kí mendan, chia sẻ lên thư mục server và gửi mail cc cosodaotao.</td>
+                        <td class="time-info">1 ngày sau mendan</td>
+                        <td class="note-content">
+                            định dạng file pdf
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer>
+        © 2025 Tài liệu hướng dẫn | Thiết kế bởi Thuận
+    </footer>
+</body>
+</html>
